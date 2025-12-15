@@ -2,7 +2,7 @@
 
 import { cookies } from "next/headers";
 
-const BaseURL = "https://api.google.com/api/";
+const BaseURL = "https://saledev.restoyar.ir/api";
 
 export const apiCall = async (
   url,
@@ -50,10 +50,10 @@ export const apiCallWithToken = async (
   headers = {},
   cache = "no-store"
 ) => {
-  const token = cookies().get("token");
-  if (!token) {
-    throw new Error("توکن احراز هویت یافت نشد.");
-  }
+  // const token = cookies().get("token");
+  // if (!token) {
+  //   throw new Error("توکن احراز هویت یافت نشد.");
+  // }
 
   const config = {
     method,
@@ -61,7 +61,7 @@ export const apiCallWithToken = async (
     headers: {
       "Content-Type": "application/json",
       Accept: "application/json",
-      Authorization: `Bearer ${token.value}`,
+      Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjExODEiLCJ1bmlxdWVfbmFtZSI6IjA5OTE5NDQ5NDcxIiwicm9sZSI6IlNhbGVBZG1pbiIsIm5iZiI6MTc2NTgxNzgwMSwiZXhwIjoxNzY1OTA0MjAxLCJpYXQiOjE3NjU4MTc4MDEsImlzcyI6InJlc3RveWFyLmlyIiwiYXVkIjoicmVzdG95YXIuaXIifQ.QFvf1KJTuFsO0VG3xOgde01CTiwHZNTzHj08-s6VJEM`,
       ...headers,
     },
   };

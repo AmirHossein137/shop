@@ -1,8 +1,8 @@
 import { apiUrl } from "./apiUrl";
+import { apiCallWithToken } from "./apiService";
 
 export const useApiMethods = () => {
   return {
-    loginAdmin: async (mobile, password) =>
-      apiCall.post(apiUrl.login, { mobile, password }),
+    getSalesUnits: async (branchId) => apiCallWithToken(apiUrl.getSalesUnits + `?branchId=${branchId}`),
   };
 };

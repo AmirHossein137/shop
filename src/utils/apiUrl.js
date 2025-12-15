@@ -1,3 +1,3 @@
 export const apiUrl = {
-  login: "/login",
+  getSalesUnits: "/ShopApi/GetSalesUnits",
 };
