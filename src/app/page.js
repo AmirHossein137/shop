@@ -1,5 +1,6 @@
 "use client";
 
+import HomePage from "@/components/home/HomePage";
 import { useApiMethods } from "@/services/apiMethods";
 import { useEffect } from "react";
 
@@ -17,7 +18,7 @@ export default function Home() {
 
   return (
     <>
-      
+      <HomePage />
     </>
   );
 }

@@ -10,7 +10,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="fa" dir="rtl">
       <body className={`${peyda.variable} antialiased`}>
         <ProviderRTK>
           <Layout>{children}</Layout>
