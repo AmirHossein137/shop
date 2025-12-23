@@ -1,3 +1,4 @@
 export const apiUrl = {
-  getSalesUnits: "/ShopApi/GetSalesUnits",
+  getMenuCategories: "/ShopApi/GetMenuCategories",
+  getMenus : "/ShopApi/GetMenus"
 };

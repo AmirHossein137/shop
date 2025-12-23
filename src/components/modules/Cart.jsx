@@ -12,10 +12,11 @@ const ReactStars = dynamic(() => import("react-stars"), {
   ssr: false,
 });
 
-const Cart = ({ fooods }) => {
+const Cart = ({ foods }) => {
+  console.log(foods)
   return (
     <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-      {fooods.map((item) => (
+      {foods.map((item) => (
         <div
           key={item.id}
           className="group flex flex-col bg-white p-3 rounded-xl shadow transition-all duration-200 hover:-translate-y-3"
@@ -34,16 +35,16 @@ const Cart = ({ fooods }) => {
 
           <div className="flex items-center justify-center gap-2">
             <div className="flex items-center gap-1">
-              <span>{numberFormat(item.minPrice)}</span>
+              <span>{numberFormat(item.price)}</span>
               <span className="text-sm">تومان</span>
             </div>
-            <span>-</span>
+            {/* <span>-</span>
             <div className="flex items-center gap-1">
               <span>{numberFormat(item.maxprice)}</span>
               <span className="text-sm">تومان</span>
-            </div>
+            </div> */}
           </div>
-          <p className="text-sm text-justify text-gray-600">{item.text}</p>
+          <p className="text-sm text-justify text-gray-600">{item.description}</p>
           {/* <div className="flex items-center justify-center">
     <ReactStars
       value={item.rate}

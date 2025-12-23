@@ -1,24 +1,15 @@
-"use client";
+import { redirect } from "next/navigation";
+import { cookies } from "next/headers";
 
-import HomePage from "@/components/home/HomePage";
-import { useApiMethods } from "@/services/apiMethods";
-import { useEffect } from "react";
+export default async function Home() {
+  const cookieStore = cookies();
 
-export default function Home() {
-  // const { getSalesUnits } = useApiMethods();
+  const branchId = cookieStore.get("branchId")?.value;
+  const unitId = cookieStore.get("unitId")?.value;
 
-  // const getData = async () => {
-  //   const resp = await getSalesUnits(1);
-  //   console.log(resp);
-  // };
+  if (!branchId || !unitId) {
+    redirect("/select-branch");
+  }
 
-  // useEffect(() => {
-  //   getData();
-  // }, []);
-
-  return (
-    <>
-      <HomePage />
-    </>
-  );
+  redirect(`/branch/${branchId}/unit/${unitId}/menu`);
 }

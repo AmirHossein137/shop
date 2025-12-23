@@ -1,8 +1,17 @@
 import { apiUrl } from "./apiUrl";
-import { apiCallWithToken } from "./apiService";
+import { apiCall } from "./apiService";
 
 export const useApiMethods = () => {
   return {
-    getSalesUnits: async (branchId) => apiCallWithToken(apiUrl.getSalesUnits + `?branchId=${branchId}`),
+    getMenuCategories: async (branchId, saleUnitId) =>
+      apiCall(
+        apiUrl.getMenuCategories +
+          `?branchId=${branchId}&saleUnitId=${saleUnitId}`
+      ),
+    getMenus: async (branchId, saleUnitId, categoryId) =>
+      apiCall(
+        apiUrl.getMenus +
+          `?branchId=${branchId}&saleUnitId=${saleUnitId}&categoryId=${categoryId}`
+      ),
   };
 };
