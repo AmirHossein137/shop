@@ -23,7 +23,7 @@ const Cart = ({ foods }) => {
         >
           <div className="bg-[#f2f2f2] w-full h-[286px] rounded-xl flex items-center justify-center mb-4 overflow-hidden">
             <Image
-              src={item.image}
+              src={item?.imgSrc}
               width={220}
               height={220}
               alt={item.title}

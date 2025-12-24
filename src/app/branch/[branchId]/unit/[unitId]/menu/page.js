@@ -22,6 +22,7 @@ const MenuPage = ({ params }) => {
 
   const handleMenu = async (id) => {
     const resp = await getMenus(branchId, unitId , id);
+    console.log(resp)
     setMenus(resp.data)
   }
 
