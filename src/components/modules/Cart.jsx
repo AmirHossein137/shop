@@ -15,10 +15,10 @@ const Cart = ({ foods }) => {
           <div className="bg-[#f2f2f2] w-full h-[286px] rounded-xl flex items-center justify-center mb-4 overflow-hidden">
             <Image
               src={`${process.env.NEXT_PUBLIC_IMAGE_BASE_URL}${item.imgSrc}`}
-              width={220}
-              height={220}
+              width={1000}
+              height={1000}
               alt={item.title}
-              className="rounded-md object-cover transition-transform duration-300 group-hover:scale-110"
+              className="rounded-md object-cover w-full h-full transition-transform duration-300 group-hover:scale-110"
             />
           </div>
 
