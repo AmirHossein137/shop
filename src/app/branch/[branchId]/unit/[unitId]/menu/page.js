@@ -1,4 +1,5 @@
 "use client";
+
 import PreLoading from "@/components/loading/PreLoading";
 import Cart from "@/components/modules/Cart";
 import { useApiMethods } from "@/services/apiMethods";
@@ -53,7 +54,7 @@ const MenuPage = ({ params }) => {
           <div className="flex flex-col items-center gap-3">
             <span className="text-[#c33] font-medium">منوی ویژه</span>
             <span className="text-2xl font-bold">منوی ویژه ما</span>
-            <div className="w-full px-3 flex pb-3 items-center gap-4 overflow-x-auto scrollbar-hide justify-start">
+            <div className="w-full px-3 flex pb-3 items-center justify-start lg:justify-center gap-4 overflow-x-auto scrollbar-hide ">
               {categories?.map((item) => (
                 <button
                   key={item?.id}
